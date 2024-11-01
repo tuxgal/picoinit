@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 	"golang.org/x/sys/unix"
 )
 
@@ -15,7 +15,7 @@ const (
 // Service janitor.
 type serviceJanitor struct {
 	// Logger used by the janitor.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 	// Service repository.
 	repo janitorRepo
 	// True if more than one service is being managed by the service
@@ -49,7 +49,7 @@ type terminatedService struct {
 
 // newServiceJanitor instantiates a new janitor.
 func newServiceJanitor(
-	log zzzlogi.Logger,
+	log tuxlogi.Logger,
 	repo janitorRepo,
 	multiServiceMode bool,
 ) *serviceJanitor {

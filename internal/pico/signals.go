@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 	"golang.org/x/sys/unix"
 )
 
@@ -70,7 +70,7 @@ type signalManagerRepo interface {
 // service janitor.
 type signalManager struct {
 	// Logger used by the signal manager.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 	// The channel used to receive notifications about signals from the OS.
 	sigCh chan os.Signal
 	// The channel used to notify that the signal handler goroutine has exited.
@@ -87,7 +87,7 @@ type signalManager struct {
 
 // newSignalManager instantiates a signal manager and initiates the signal handler
 // goroutine to monitor signals.
-func newSignalManager(log zzzlogi.Logger) *signalManager {
+func newSignalManager(log tuxlogi.Logger) *signalManager {
 	sm := &signalManager{
 		log:              log,
 		sigCh:            make(chan os.Signal, 10),

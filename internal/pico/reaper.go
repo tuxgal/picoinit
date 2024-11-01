@@ -3,7 +3,7 @@ package pico
 import (
 	"fmt"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 	"golang.org/x/sys/unix"
 )
 
@@ -23,10 +23,10 @@ func (r *reapedProc) String() string {
 
 type zombieReaper struct {
 	// Logger used by the zombie reaper.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 }
 
-func newZombieReaper(log zzzlogi.Logger) *zombieReaper {
+func newZombieReaper(log tuxlogi.Logger) *zombieReaper {
 	return &zombieReaper{
 		log: log,
 	}

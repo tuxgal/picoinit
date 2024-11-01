@@ -4,7 +4,7 @@ package pico
 import (
 	"fmt"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 )
 
 // Init manages init responsibility in a system (by reaping processes which
@@ -51,7 +51,7 @@ func (s *Hook) String() string {
 // InitConfig is the configuration used by Init.
 type InitConfig struct {
 	// The logger used by Init.
-	Log zzzlogi.Logger
+	Log tuxlogi.Logger
 	// The pre-hook to be executed prior to launching the services. The
 	// services will not be launched until the pre-hook exits successfully.
 	// If the pre-hook exits with a non-zero exit status, Init will also fail.

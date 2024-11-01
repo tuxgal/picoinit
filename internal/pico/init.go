@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 )
 
 // initImpl is the implementation of picoinit, the combo init and service
 // manager.
 type initImpl struct {
 	// Logger used by init.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 	// State machine.
 	state *stateMachine
 	// Signal manager.
@@ -149,7 +149,7 @@ func (i *initImpl) checkPid1() error {
 
 // buildJanitor builds a janitor and a repository, and associates them with
 // the specified signal manager.
-func buildJanitor(log zzzlogi.Logger, signals *signalManager, multiServiceMode bool) (*serviceJanitor, *serviceRepo) {
+func buildJanitor(log tuxlogi.Logger, signals *signalManager, multiServiceMode bool) (*serviceJanitor, *serviceRepo) {
 	signals.clearReapObserver()
 	signals.clearRepo()
 	repo := newServiceRepo(log)

@@ -6,14 +6,14 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 	"golang.org/x/sys/unix"
 )
 
 // serviceLauncher allows launching services.
 type serviceLauncher struct {
 	// Logger used by the service launcher.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 	// Service repository.
 	repo launcherRepo
 }
@@ -26,7 +26,7 @@ type launcherRepo interface {
 
 // launchHook launches the specified hook and waits till it terminates
 // prior to exiting.
-func launchHook(log zzzlogi.Logger, repo launcherRepo, hook *Hook) error {
+func launchHook(log tuxlogi.Logger, repo launcherRepo, hook *Hook) error {
 	sl := &serviceLauncher{
 		log:  log,
 		repo: repo,
@@ -36,7 +36,7 @@ func launchHook(log zzzlogi.Logger, repo launcherRepo, hook *Hook) error {
 
 // launchServices launches the specified list of services and updates the
 // service list in the specified repository.
-func launchServices(log zzzlogi.Logger, repo launcherRepo, services ...*Service) error {
+func launchServices(log tuxlogi.Logger, repo launcherRepo, services ...*Service) error {
 	sl := &serviceLauncher{
 		log:  log,
 		repo: repo,

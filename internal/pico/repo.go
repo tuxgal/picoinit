@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 )
 
 type serviceOrHook struct {
@@ -34,7 +34,7 @@ func (l *launchedServiceOrHook) String() string {
 // querying services or hooks.
 type serviceRepo struct {
 	// Logger used by the service repository.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 	// Mutex controlling access to the service list.
 	mu sync.Mutex
 	// List of services or hooks.
@@ -42,7 +42,7 @@ type serviceRepo struct {
 }
 
 // newServiceRepo instantiates a new service repository.
-func newServiceRepo(log zzzlogi.Logger) *serviceRepo {
+func newServiceRepo(log tuxlogi.Logger) *serviceRepo {
 	return &serviceRepo{
 		log:      log,
 		entities: make(map[int]*launchedServiceOrHook),

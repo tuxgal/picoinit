@@ -1,8 +1,9 @@
-module github.com/tuxdude/pico
+module github.com/tuxgal/picoinit
 
 go 1.17
 
 require (
-	github.com/tuxdude/zzzlogi v0.2.0
+	github.com/tuxgal/tuxlog v0.4.0
+	github.com/tuxgal/tuxlogi v0.3.0
 	golang.org/x/sys v0.26.0
 )

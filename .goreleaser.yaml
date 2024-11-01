@@ -23,7 +23,7 @@ builds:
     # Use the commit timestamp as the binary's modified timestamp.
     mod_timestamp: '{{ .CommitTimestamp }}'
     # Set to true only for library projects.
-    skip: true
+    skip: false
     # Target platform and architectures.
     targets:
       - linux_amd64
@@ -61,7 +61,7 @@ signs:
     cmd: gpg
     args:
       - "-u"
-      - "8D458AC08D2CE9CE"
+      - "1856E0777ADFF1E9"
       - "--output"
       - "${signature}"
       - "--detach-sign"

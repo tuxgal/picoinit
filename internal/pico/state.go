@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/tuxdude/zzzlogi"
+	"github.com/tuxgal/tuxlogi"
 )
 
 const (
@@ -72,7 +72,7 @@ func (i initState) String() string {
 // stateMachine is a state machine for picoinit.
 type stateMachine struct {
 	// Logger used by state machine.
-	log zzzlogi.Logger
+	log tuxlogi.Logger
 	// Mutex for protecting access to the state field.
 	mu sync.Mutex
 	// Current state of picoinit.
@@ -80,7 +80,7 @@ type stateMachine struct {
 }
 
 // newStateMachine instantiates a new state machine.
-func newStateMachine(log zzzlogi.Logger) *stateMachine {
+func newStateMachine(log tuxlogi.Logger) *stateMachine {
 	return &stateMachine{
 		log:   log,
 		state: stateInvalid,
