@@ -5,5 +5,5 @@ go 1.17
 require (
 	github.com/tuxgal/tuxlog v0.4.0
 	github.com/tuxgal/tuxlogi v0.3.0
-	golang.org/x/sys v0.30.0
+	golang.org/x/sys v0.31.0
 )
