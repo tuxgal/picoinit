@@ -115,7 +115,8 @@ func parseWithPicoInitFlags() (*invocation, error) {
 
 	for !fi.done() {
 		arg := fi.arg()
-		if arg == cmdFlag {
+		switch arg {
+		case cmdFlag:
 			cmdArgs, err := fi.captureUntilNextPicoInitFlag()
 			if err != nil {
 				return nil, err
@@ -128,7 +129,7 @@ func parseWithPicoInitFlags() (*invocation, error) {
 				Args: cmdArgs[1:],
 			}
 			services = append(services, s)
-		} else if arg == preHookFlag {
+		case preHookFlag:
 			if preHook != nil {
 				return nil, fmt.Errorf("cannot specify multiple pre-hooks")
 			}
@@ -143,7 +144,7 @@ func parseWithPicoInitFlags() (*invocation, error) {
 				Cmd:  cmdArgs[0],
 				Args: cmdArgs[1:],
 			}
-		} else {
+		default:
 			log.Fatalf("Unexpected condition, a picoinit flag we do not handle: %q", arg)
 		}
 	}
