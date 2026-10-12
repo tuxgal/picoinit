@@ -1,9 +1,9 @@
 module github.com/tuxgal/picoinit
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/tuxgal/tuxlog v0.4.0
 	github.com/tuxgal/tuxlogi v0.3.0
-	golang.org/x/sys v0.47.0
+	golang.org/x/sys v0.49.0
 )
